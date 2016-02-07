@@ -11,7 +11,6 @@
 
 # The location of the pre-compiled cryptography binary.
 VENDORED_GDAL="https://lang-python.s3.amazonaws.com/$STACK/libraries/vendor/gdal.tar.gz"
-echo $VENDORED_GDAL
 
 PKG_CONFIG_PATH="/app/.heroku/vendor/lib/pkgconfig:$PKG_CONFIG_PATH"
 
