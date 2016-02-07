@@ -14,7 +14,8 @@ source $BIN_DIR/utils
 source $BIN_DIR/helpers
 
 # Retrieve version
-GDAL_VERSION=$(manifest_version "gdal")
+GDAL_VERSION="1.11.1"
+VENDORED_GDAL="https://s3.amazonaws.com/fl-dashboard/vendor/gdal-1.11.1-heroku-final.tar.gz"
 
 # Display some information
 echo "Using gdal version: ${GDAL_VERSION}" | indent
@@ -22,7 +23,7 @@ echo "Using gdal version: ${GDAL_VERSION}" | indent
 if [ ! -d $CACHE_DIR/gdal ]; then
   # Download and extract gdal into target vendor directory.
   echo "Fetching, caching and installing gdal" | indent
-  download_package "gdal" "${GDAL_VERSION}" "${CACHE_DIR}/gdal"
+  curl $VENDORED_GDAL -s | tar zxv -C "${CACHE_DIR}" &> /dev/null
 fi
 
 mkdir -p $BUILD_DIR/.geodjango
