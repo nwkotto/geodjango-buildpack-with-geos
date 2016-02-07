@@ -15,7 +15,7 @@ source $BIN_DIR/helpers
 
 # Retrieve version
 GDAL_VERSION="1.11.1"
-VENDORED_GDAL="https://s3.amazonaws.com/fl-dashboard/vendor/gdal-1.11.1-heroku-final.tar.gz"
+VENDORED_GDAL="https://s3.amazonaws.com/fl-dashboard/buildpack/vendor/gdal-1.11.1-heroku-final.tar.gz"
 
 # Display some information
 echo "Using gdal version: ${GDAL_VERSION}" | indent
