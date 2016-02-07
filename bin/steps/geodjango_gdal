@@ -23,7 +23,7 @@ echo "Using gdal version: ${GDAL_VERSION}" | indent
 if [ ! -d $CACHE_DIR/gdal ]; then
   # Download and extract gdal into target vendor directory.
   echo "Fetching, caching and installing gdal" | indent
-  curl $VENDORED_GDAL -s | tar zxv -C "${CACHE_DIR}" &> /dev/null
+  curl $VENDORED_GDAL -s | tar zxv -C "${CACHE_DIR}"
 fi
 
 mkdir -p $BUILD_DIR/.geodjango
